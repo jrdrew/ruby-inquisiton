@@ -1,0 +1,11 @@
+<li><%= question.title %><br>
+
+    <%= question.body %><br>
+    <%= question.author %><br>
+    <%= question.client %><br>
+	<%= question.created_at %><br>
+	
+    <%= link_to 'Show', question %>, 
+	<%= link_to 'Edit', edit_question_path(question) %>, 
+	<%= link_to 'Destroy', question, confirm: 'Are you sure?', method: :delete %>
+  </li>

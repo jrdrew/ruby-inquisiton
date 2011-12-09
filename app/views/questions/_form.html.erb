@@ -1,0 +1,35 @@
+<% @question.tags.build %>
+<%= form_for(@question) do |question_form| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= question_form.label :title %><br />
+    <%= question_form.text_field :title %>
+  </div>
+  <div class="field">
+    <%= question_form.label :body %><br />
+    <%= question_form.text_area :body %>
+  </div>
+  <div class="field">
+    <%= question_form.label :client %><br />
+    <%= question_form.text_field :client %>
+  </div>
+  
+  <h2>Tags</h2>
+  <%= render :partial => 'tags/form',
+             :locals => {:form => question_form} %>
+			 
+  <div class="actions">
+    <%= question_form.submit %>
+  </div>
+<% end %>

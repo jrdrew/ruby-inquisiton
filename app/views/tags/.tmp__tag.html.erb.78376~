@@ -1,0 +1,13 @@
+<li>
+    <%= link_to question.title, question %>
+    <br>
+    <%= question.body %>
+    <br>
+    <%= link_to question.user.name, questions_users_path(:user_id => question.user.id) %>
+	<br>
+    <%= question.client %>
+    <br>
+    <%= question.created_at %>
+    <br>
+    <%= link_to 'Edit', edit_question_path(question) %>, <%= link_to 'Destroy', question, confirm: 'Are you sure?', method: :delete %>
+</li>

@@ -1,0 +1,12 @@
+<p>
+    <b>Author:</b>
+    <%= reply.user.name %>
+</p>
+<p>
+    <b>Reply:</b>
+    <%= reply.body %>
+</p>
+<%= link_to 'Edit', edit_question_reply_path(@question.id, reply.id) %>
+<%= link_to 'Destroy Reply', [reply.question, reply],
+               :confirm => 'Are you sure?',
+               :method => :delete %>

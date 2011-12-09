@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @question.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @question.body %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @question.user.name %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%= @question.client %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @question.tags.map { |t| t.name }.join(", ") %>
+</p>
+
+<h2>Replies</h2>
+<%= render @question.replies %>
+
+<h2>Add a reply:</h2>
+<%= render "replies/form" %>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

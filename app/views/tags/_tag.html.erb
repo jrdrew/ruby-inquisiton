@@ -1,0 +1,7 @@
+<p>
+    <div id="dialogDeleteTag" display="hidden" title="Confirmation Required">Are you sure about this?</div>
+</p>
+<li>
+    <a href="/questions/search" class="searchTag"><%= tag.name %></a>
+	<a class="deleteTag" href="/delete" value="/questions/#{@question.id}/tags/#{tag.name}"><img src="/images/icontrash.gif" alt="Delete Tag" width="12" height="12"></a>
+</li>

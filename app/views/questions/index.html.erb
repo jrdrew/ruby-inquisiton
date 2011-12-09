@@ -1,0 +1,20 @@
+<% title "Questions" %>
+
+<%= link_to 'New Question', new_question_path %>
+
+<div id="questions">
+  <%= render :partial => @questions %>
+</div>
+
+<br><br>
+<div id="tags">
+    <%= render :partial => @tags %>
+</div>
+<br><br>
+<%= will_paginate @questions %>
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<%= form.fields_for :tags do |tag_form| %>
+	<div class="clearfix">
+	    <%= tag_form.label :name, 'Tags:' %>
+	    <div class="input clearfix">
+	        <%= tag_form.text_field :name %>
+	    </div>
+	</div>
+	<% unless tag_form.object.nil? || tag_form.object.new_record? %>
+		<div class="field">
+		    <%= tag_form.label :_destroy, 'Remove:' %>
+		    <%= tag_form.check_box :_destroy %>
+		</div>
+	<% end %>
+<% end %>
+
+<!--
+<div class="clearfix">
+            <label for="tags">Tags</label>
+
+            <div class="input clearfix">
+                <input type="text" size="50" name="tags" id="tags"  value="${question.tags}"/>
+            </div>
+        </div>
+		-->

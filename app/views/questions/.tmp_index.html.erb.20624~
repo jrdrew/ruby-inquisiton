@@ -1,0 +1,15 @@
+<% title "Questions" %>
+<% javascript :defaults, 'endless_page_questions' %>
+
+<%= link_to 'New Question', new_question_path %>
+
+<div id="questions">
+  <%= render :partial => @questions %>
+</div>
+<p id="loading">Loading more page results...</p>
+
+
+
+
+
+
