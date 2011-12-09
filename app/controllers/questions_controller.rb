@@ -25,6 +25,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new.json
   def new
     @question = Question.new
+    @tags = Tag.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -46,6 +47,10 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
+        Tag.new.tag_splitter(params[:tags]).each {|tag_name|
+          Tag.create(:question_id => @question.id, :name => tag_name)
+        }
+        
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
         format.json { render json: @question, status: :created, location: @question }
       else

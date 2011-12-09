@@ -16,23 +16,5 @@ end
 
 
 describe QuestionsHelper do
-  
-  before(:each) do
-    @question_helper_class = QuestionsHelperClass.new
-    @question_helper_class.extend(QuestionsHelper)
-  end  
-  
-  describe "tag_splitter" do
-    it "with empty string" do
-      @question_helper_class.tag_splitter('').should eq([])
-    end
-    
-    it "with no comma in string" do
-       @question_helper_class.tag_splitter('Scala').should eq(["Scala"])
-    end
-    
-    it "with commas in string" do
-       @question_helper_class.tag_splitter('Scala,Java,Ruby').should eq(["Scala", "Java", "Ruby"])
-    end
-  end
+
 end

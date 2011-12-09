@@ -25,7 +25,9 @@ describe Question do
   describe "create" do
     it "should work if you give it an array of tags" do
       vals = ['Foo', 'Bar', 'Baz']
-      question = Question.new :tags => vals
+      
+      question = Question.new
+      tag = Tag.new :question_id => question.id
       
       tag_names = question.tags.select {|tag| tag.name}
   

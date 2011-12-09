@@ -33,7 +33,7 @@
 //});
 
 $(document).ready(function() {
-    $("#question_tags_attributes_0_name").tagit({ tagSource: function(search, showChoices) {
+    $("#tags").tagit({ tagSource: function(search, showChoices) {
         $.ajax({
             'url' : "/questions/tags/" + search.term,
             'dataType' : 'json',
